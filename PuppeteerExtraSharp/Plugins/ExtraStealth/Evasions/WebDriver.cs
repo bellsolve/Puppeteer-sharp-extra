@@ -17,15 +17,15 @@ namespace PuppeteerExtraSharp.Plugins.ExtraStealth.Evasions
         public override void BeforeLaunch(LaunchOptions options)
         {
             var args = options.Args.ToList();
-            var idx = args.FindIndex(e => e.StartsWith("--disable-blink-features="));
-            if (idx != -1)
-            {
-                var arg = args[idx];
-                args[idx] = $"{arg}, AutomationControlled";
-                return;
-            }
+            //var idx = args.FindIndex(e => e.StartsWith("--disable-blink-features="));
+            //if (idx != -1)
+            //{
+            //    var arg = args[idx];
+            //    args[idx] = $"{arg}, AutomationControlled";
+            //    return;
+            //}
 
-            args.Add("--disable-blink-features=AutomationControlled");
+            //args.Add("--disable-blink-features=AutomationControlled");
 
             options.Args = args.ToArray();
         }
