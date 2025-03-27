@@ -55,7 +55,7 @@ namespace PuppeteerExtraSharp.Plugins.Recaptcha
             if (src == null)
                 throw new CaptchaException(page.Url, "Recaptcha key not found!");
 
-            var key = HttpUtility.ParseQueryString(src.ToString()).Get("k");
+            var key = System.Web. HttpUtility.ParseQueryString(src.ToString()).Get("k");
             return key;
         }
 
